@@ -1,0 +1,32 @@
+.Navigation {
+
+}
+
+.Navigation ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #F69454;
+}
+
+.Navigation li {
+    float: left;
+}
+
+.Navigation li a {
+    display: block;
+    color: #FCFDFE;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.Navigation li a:hover {
+    background-color: #EE693F;
+}
+
+.active {
+    color: aliceblue;
+    background-color: #EE693F;
+}
