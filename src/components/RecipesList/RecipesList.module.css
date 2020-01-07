@@ -1,0 +1,26 @@
+.RecipeList {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.RecipeList li{
+    display: block;
+    padding: 14px 16px;
+    text-decoration: none;
+
+}
+
+.RecipeList li:nth-child(odd){
+ background-color: #79a740;
+}
+
+.RecipeList li:nth-child(even){
+background-color: #F69454;
+}
+
+
+.RecipeListItem{
+
+}

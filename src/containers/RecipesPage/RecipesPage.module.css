@@ -1,0 +1,27 @@
+.RecipesList{
+    grid-area: rl;
+    border: 1px solid rgba(0, 0, 0, 0.8);
+}
+
+.RecipePreview{
+    grid-area: rp;
+    border: 1px solid rgba(0, 0, 0, 0.8);
+}
+
+
+.GridContainer {
+    display: grid;
+    grid-template-areas:
+            'rl rp';
+    grid-gap: 10px;
+}
+
+/* For mobile phones: */
+@media only screen and (max-width: 768px) {
+    .GridContainer {
+        grid-template-areas:
+                'rp'
+                'rl';
+        grid-gap: 10px;
+    }
+}

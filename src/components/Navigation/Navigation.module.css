@@ -24,6 +24,7 @@
 
 .Navigation li a:hover {
     background-color: #EE693F;
+    opacity: 0.5;
 }
 
 .active {
