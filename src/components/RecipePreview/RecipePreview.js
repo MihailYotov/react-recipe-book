@@ -3,7 +3,7 @@ import classes from './RecipePreview.module.css';
 
 const RecipePreview = (props) => {
     const ingredientList = props.recipe.ingredients.map((ingredient, index) => {
-        return <tr>
+        return <tr key={index}>
             <td>{ingredient.name}</td>
             <td>{ingredient.amount}</td>
             <td>{ingredient.units}</td>
@@ -14,11 +14,18 @@ const RecipePreview = (props) => {
         <Fragment>
             <h2 className={classes.h2}>{props.recipe.name}</h2>
             <table className={classes.Table}>
-                <th>Ingredient</th>
-                <th>amount</th>
-                <th>units</th>
-                {ingredientList}
+                <thead>
+                    <tr>
+                        <th>Ingredient</th>
+                        <th>Amount</th>
+                        <th>Units</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {ingredientList}
+                </tbody>
             </table>
+            <p>{props.recipe.description}</p>
         </Fragment>
     )
 };

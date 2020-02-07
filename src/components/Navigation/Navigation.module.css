@@ -7,7 +7,7 @@
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #F69454;
+    background-color: var(--primary-color);
 }
 
 .Navigation li {
@@ -23,11 +23,11 @@
 }
 
 .Navigation li a:hover {
-    background-color: #EE693F;
+    background-color: var(--secondary-color);
     opacity: 0.5;
 }
 
 .active {
     color: aliceblue;
-    background-color: #EE693F;
+    background-color: var(--secondary-color);
 }

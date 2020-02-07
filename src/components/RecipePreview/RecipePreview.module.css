@@ -1,5 +1,5 @@
 .h2 {
-    background-color: #EE693F;
+    background-color: var(--primary-color);
     margin: 0;
     padding: 10px 16px;
 }

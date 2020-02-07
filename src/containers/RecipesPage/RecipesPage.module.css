@@ -14,6 +14,7 @@
     grid-template-areas:
             'rl rp';
     grid-gap: 10px;
+    grid-template-columns: 50%;
 }
 
 /* For mobile phones: */
@@ -22,6 +23,7 @@
         grid-template-areas:
                 'rp'
                 'rl';
-        grid-gap: 10px;
+        grid-row-gap: 10px;
+        grid-template-columns: auto
     }
 }

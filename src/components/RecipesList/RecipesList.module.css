@@ -13,11 +13,12 @@
 }
 
 .RecipeList li:nth-child(odd){
- background-color: #79a740;
+ background-color: var(--primary-color);
 }
 
 .RecipeList li:nth-child(even){
-background-color: #F69454;
+background-color: var(--secondary-color);
+
 }
 
 
