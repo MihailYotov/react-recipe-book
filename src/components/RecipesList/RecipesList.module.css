@@ -13,12 +13,16 @@
 }
 
 .RecipeList li:nth-child(odd){
- background-color: var(--primary-color);
+ background-color: var(--secondary-color);
 }
 
 .RecipeList li:nth-child(even){
-background-color: var(--secondary-color);
+background-color: var(--primary-color);
 
+}
+
+.RecipeList li:hover {
+    cursor: pointer;
 }
 
 

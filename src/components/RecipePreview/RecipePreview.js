@@ -4,7 +4,7 @@ import classes from './RecipePreview.module.css';
 const RecipePreview = (props) => {
     const ingredientList = props.recipe.ingredients.map((ingredient, index) => {
         return <tr key={index}>
-            <td>{ingredient.name}</td>
+            <td>{ingredient.ingredient}</td>
             <td>{ingredient.amount}</td>
             <td>{ingredient.units}</td>
         </tr>

@@ -2,10 +2,21 @@ import React from 'react';
 
 import Navigation from '../../components/Navigation/Navigation';
 
+const navProps = [
+    {
+        title: 'Home',
+        path: '/'
+    },
+    {
+        title: 'Recipes',
+        path: '/recipes-page'
+    }
+];
+
 const header = () => {
     return (
         <div>
-            <Navigation/>
+            <Navigation navProps={navProps}/>
         </div>
     );
 };
