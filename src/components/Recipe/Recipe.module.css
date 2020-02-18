@@ -1,0 +1,76 @@
+.RecipeFrom {
+    display: grid;
+    grid-template-columns: auto;
+    background-color: var(--primary-color);
+}
+.RecipeFrom > label {
+    padding: 5px;
+}
+
+.RecipeFrom > input {
+    width: 60%;
+    margin: 5px auto;
+    border-radius: 4px;
+    padding: 5px;
+}
+
+.RecipeFrom > textarea {
+    width: 60%;
+    margin: 5px auto;
+    padding: 5px;
+    border-radius: 4px;
+    height: 150px;
+    resize: vertical;
+}
+
+.IngredientsFieldset {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    background-color: var(--primary-color);
+    padding: 5px;
+}
+
+.IngredientsFieldset input {
+    margin: 0 10px;
+    border-radius: 4px;
+}
+
+.FormButton {
+    width: 150px;
+    margin: 10px auto;
+    padding: 10px;
+    border-radius: 4px;
+    background-color: var(--background-color);
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button[type='submit'] {
+    width: 50%;
+}
+
+@media only screen and (max-width: 768px) {
+    .RecipeFrom {
+        width: 100%;
+    }
+    .RecipeFrom > input {
+        width: 90%;
+    }
+
+    .RecipeFrom > textarea {
+        width: 90%;
+    }
+
+    .IngredientsFieldset input {
+        margin: 0 10px;
+        border-radius: 4px;
+        width: 50px;
+    }
+    .IngredientsFieldset input[name='ingredient'] {
+        width: 130px;
+    }
+
+    button[type='submit'] {
+        width: 90%;
+    }
+}

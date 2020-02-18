@@ -9,7 +9,7 @@ const navProps = [
     },
     {
         title: 'Recipes',
-        path: '/recipes-page'
+        path: '/recipes'
     }
 ];
 
