@@ -45,7 +45,7 @@
     cursor: pointer;
 }
 
-button[type='submit'] {
+.RecipeFrom button[type='submit'] {
     width: 50%;
 }
 

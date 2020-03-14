@@ -4,13 +4,17 @@ import classes from './Navigation.module.css';
 
 const navigation = (props) => {
     const listItems = props.navProps.map((item, index) => {
-        return(
-            <li key={index}>
+        return (
+            <li key={index} style={item.style || {}}>
                 <NavLink
-                    to={item.path}
+                    to={item.path || ''}
                     exact
-                    activeClassName={classes.active}
-                >{item.title}
+                    activeClassName={item.path && classes.active}>
+                    {item.function ?
+                        <div onClick={item.function}>
+                            {item.title}
+                        </div> : item.title
+                    }
                 </NavLink>
             </li>
         )
@@ -18,7 +22,7 @@ const navigation = (props) => {
 
     return (
         <div className={classes.Navigation}>
-            <ul >
+            <ul>
                 {listItems}
             </ul>
         </div>

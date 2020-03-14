@@ -8,6 +8,8 @@
   --primary-color: #257985;
   --secondary-color: #5ea8a7;
   --background-color: #ededed;
+  --danger-color: #b57e7e;
+  --success-color: #54a88f;
 }
 
 body {

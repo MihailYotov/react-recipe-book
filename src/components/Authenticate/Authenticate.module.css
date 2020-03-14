@@ -1,0 +1,34 @@
+.AuthFrom {
+    display: grid;
+    grid-template-columns: auto;
+    background-color: var(--primary-color);
+}
+.AuthFrom > label {
+    padding: 5px;
+}
+
+.AuthFrom > input {
+    width: 30%;
+    margin: 5px auto;
+    border-radius: 4px;
+    padding: 5px;
+}
+
+.FormButton {
+    width: 20%;
+    margin: 30px auto;
+    padding: 10px;
+    border-radius: 4px;
+    background-color: var(--background-color);
+    font-weight: bold;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 768px) {
+    .AuthFrom {
+        width: 100%;
+    }
+    .AuthFrom > input {
+        width: 90%;
+    }
+}
