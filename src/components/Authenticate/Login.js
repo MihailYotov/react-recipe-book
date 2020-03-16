@@ -1,6 +1,7 @@
 import React, {Component, Fragment} from 'react';
 import classes from './Authenticate.module.css'
 import axios from '../../axios-base';
+import AuthContext from '../../context/authContext';
 
 class Login extends Component {
     state = {
@@ -8,6 +9,8 @@ class Login extends Component {
         password: null,
         returnSecureToken: true
     };
+
+    static contextType = AuthContext;
 
     changeHandler = (event) => {
         this.setState({[event.target.name]: event.target.value});
@@ -20,9 +23,13 @@ class Login extends Component {
             .then((response) => {
                 const expiationDate = new Date(new Date().getTime() + response.data.expiresIn * 1000);
 
-                localStorage.setItem('token', response.data.idToken);
-                localStorage.setItem('expiationDate', expiationDate);
-                localStorage.setItem('userId', response.data.localId);
+                this.context.actions.updateUserData({
+                    token: response.data.idToken,
+                    userId: response.data.localId,
+                    expiationDate: expiationDate,
+                });
+
+                this.props.history.push('/recipes');
             })
             .catch(error => {
                 console.log(error);
@@ -37,6 +44,7 @@ class Login extends Component {
                 <form onSubmit={this.submit} className={classes.AuthFrom}>
                     <label htmlFor="email">Email: </label>
                     <input type="text" name="email" id={'email'} onChange={this.changeHandler}/>
+                    {/*TODO: Password field*/}
                     <label htmlFor="password">Password: </label>
                     <input type="text" name="password" id={'password'} onChange={this.changeHandler}/>
 

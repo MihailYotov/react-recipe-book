@@ -1,8 +1,11 @@
 import React, {Component, Fragment} from 'react';
 import classes from './Recipe.module.css';
 import axios from '../../axios-base';
+import AuthContext from "../../context/authContext";
 
 class Recipe extends Component {
+    static contextType = AuthContext;
+
     state = {
         name: '',
         ingredients: [],
@@ -28,8 +31,9 @@ class Recipe extends Component {
 
     submitRecipe = (event) => {
         event && event.preventDefault();
+        const url = '/recipes/' + this.context.user.userId + '.json';
 
-        axios.post('/recipes.json', this.state)
+        axios.post(url, this.state)
             .then(() => {
                 this.props.history.push("/recipes");
             })

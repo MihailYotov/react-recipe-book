@@ -5,8 +5,11 @@ import RecipesList from '../../components/RecipesList/RecipesList';
 import RecipePreview from '../../components/RecipePreview/RecipePreview';
 import Navigation from "../../components/Navigation/Navigation";
 import axios from '../../axios-base';
+import AuthContext from "../../context/authContext";
 
 class RecipesPage extends Component {
+    static contextType = AuthContext;
+
     state = {
         previewedRecipe: null,
         recipesData: []
@@ -20,7 +23,10 @@ class RecipesPage extends Component {
     ];
 
     componentDidMount() {
-        axios.get('/recipes.json')
+        const url = '/recipes/' + this.context.user.userId + '.json';
+
+        //TODO: Require auth on get recipes;
+        axios.get(url)
             .then((results) => {
                 const fetchedData = [];
 
