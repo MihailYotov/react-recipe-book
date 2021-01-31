@@ -31,7 +31,7 @@ class Recipe extends Component {
 
     submitRecipe = (event) => {
         event && event.preventDefault();
-        const url = '/recipes/' + this.context.user.userId + '.json';
+        const url = '/recipes/' + this.context.user.userId + '.json?auth=' + this.context.user.token;
 
         axios.post(url, this.state)
             .then(() => {

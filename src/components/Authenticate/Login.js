@@ -1,7 +1,7 @@
 import React, {Component, Fragment} from 'react';
-import classes from './Authenticate.module.css'
 import axios from '../../axios-base';
 import AuthContext from '../../context/authContext';
+import AuthForm from "./AuthForm";
 
 class Login extends Component {
     state = {
@@ -16,10 +16,8 @@ class Login extends Component {
         this.setState({[event.target.name]: event.target.value});
     };
 
-    submit = (event) => {
-        event && event.preventDefault();
-
-        axios.post('https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyCilwINVSfpZ9fq3QDc-99665p4JKGq_1s', this.state)
+    submit = (data) => {
+        axios.post('https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyCilwINVSfpZ9fq3QDc-99665p4JKGq_1s', data)
             .then((response) => {
                 const expiationDate = new Date(new Date().getTime() + response.data.expiresIn * 1000);
 
@@ -41,15 +39,11 @@ class Login extends Component {
             <Fragment>
                 <h1>Login</h1>
 
-                <form onSubmit={this.submit} className={classes.AuthFrom}>
-                    <label htmlFor="email">Email: </label>
-                    <input type="text" name="email" id={'email'} onChange={this.changeHandler}/>
-                    {/*TODO: Password field*/}
-                    <label htmlFor="password">Password: </label>
-                    <input type="text" name="password" id={'password'} onChange={this.changeHandler}/>
-
-                    <button type={"submit"} className={classes.FormButton}>Login</button>
-                </form>
+                <AuthForm
+                    props={this.props}
+                    changeHandler={this.changeHandler}
+                    submit={this.submit}
+                />
             </Fragment>
         );
     }

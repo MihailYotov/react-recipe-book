@@ -23,9 +23,8 @@ class RecipesPage extends Component {
     ];
 
     componentDidMount() {
-        const url = '/recipes/' + this.context.user.userId + '.json';
+        const url = '/recipes/' + this.context.user.userId + '.json?auth=' + this.context.user.token;
 
-        //TODO: Require auth on get recipes;
         axios.get(url)
             .then((results) => {
                 const fetchedData = [];
