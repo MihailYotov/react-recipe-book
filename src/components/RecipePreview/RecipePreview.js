@@ -2,7 +2,7 @@ import React, {Fragment} from 'react';
 import classes from './RecipePreview.module.css';
 
 const RecipePreview = (props) => {
-    const ingredientList = props.recipe.ingredients.map((ingredient, index) => {
+    const ingredientList = props.recipe.ingredients && props.recipe.ingredients.map((ingredient, index) => {
         return <tr key={index}>
             <td>{ingredient.ingredient}</td>
             <td>{ingredient.amount}</td>
